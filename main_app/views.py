@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Cat
+from .models import Marmot
 
 from django.http import HttpResponse
 
