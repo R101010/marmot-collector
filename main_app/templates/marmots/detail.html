@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Marmot Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ marmot.name }}</span>
+    <p>Species: {{ marmot.species }}</p>
+    <p>Description: {{ marmot.description }}</p>
+    {% if marmot.age > 0 %}
+      <p>Age: {{ marmot.age }}</p>
+    {% else %}
+      <p>Age: Pup</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
