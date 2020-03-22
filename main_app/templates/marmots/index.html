@@ -4,20 +4,20 @@
 <h1>Marmot List</h1>
 
 {% for marmot in marmots %}
-<a href="{% url 'detail' marmot.id %}">
     <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ marmot.name }}</span>
-            <p>Species: {{ marmot.species }}</p>
-            <p>Description: {{ marmot.description }}</p>
-            {% if marmot.age > 0 %}
-                <p>Age: {{ marmot.age }}</p>
-            {% else %}
-                <p>Age: Pup</p>
-            {% endif %}
-        </div>
+        <a href="{% url 'detail' marmot.id %}">
+            <div class="card-content">
+               <span class="card-title">{{ marmot.name }}</span>
+               <p>Species: {{ marmot.species }}</p>
+               <p>Description: {{ marmot.description }}</p>
+               {% if marmot.age > 0 %}
+                   <p>Age: {{ marmot.age }}</p>
+               {% else %}
+                   <p>Age: Pup</p>
+               {% endif %}
+            </div>
+        </a>
     </div>
-  </a>
 {% endfor %}
 
 {% endblock %}
