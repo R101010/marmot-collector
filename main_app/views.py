@@ -8,6 +8,10 @@ class MarmotCreate(CreateView):
   model = Marmot
   fields = ['name', 'species', 'description', 'age']
 
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
 class MarmotUpdate(UpdateView):
   model = Marmot
   fields = ['species', 'description', 'age']
