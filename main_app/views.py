@@ -43,7 +43,7 @@ def about(request):
   return render(request, 'about.html')
 
 def marmots_index(request):
-  marmots = Marmot.objects.all()
+  marmots = Marmot.objects.filter(user=request.user)
   return render(request, 'marmots/index.html', { 'marmots': marmots })
 
 def marmots_detail(request, marmot_id):
